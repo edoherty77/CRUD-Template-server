@@ -1,10 +1,21 @@
 const db = require('../models')
 
 const index = async (req, res) => {
-  console.log('index')
-  return res.send("yoooo")
+  const allChatrooms = await db.Chatroom.find({}).populate('messages')
+  return res.json(allChatrooms)
+}
+
+const create = async (req, res) => {
+  try {
+    const createdChatroom = await db.Chatroom.create(req.body.body)
+    await createdChatroom.save()
+    return res.json(createdChatroom)
+  } catch(err) {
+    console.log(err)
+  }
 }
 
 module.exports = {
-  index
+  index,
+  create
 }

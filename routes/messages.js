@@ -2,8 +2,8 @@ const router = require('express').Router()
 const ctrl = require('../controllers')
 
 // routes
-router.get('/', ctrl.chatrooms.index)
-router.post('/', ctrl.chatrooms.create)
+router.get('/', ctrl.messages.index)
+router.post('/', ctrl.messages.create)
 
 // exports
 module.exports = router

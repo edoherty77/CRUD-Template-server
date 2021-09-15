@@ -34,7 +34,8 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/api/v1', routes.chatrooms)
+app.use('/api/v1/chatrooms', routes.chatrooms)
+app.use('/api/v1/messages', routes.messages)
 app.use('/api/v1/auth', routes.auth)
 
 //connection

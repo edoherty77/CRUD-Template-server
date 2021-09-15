@@ -2,11 +2,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const MessageSchema = new Schema({
-  text: String,
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-  }
+  message: String,
+  username: String
 })
 
 const Message = mongoose.model('Message', MessageSchema)
