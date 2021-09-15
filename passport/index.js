@@ -11,7 +11,7 @@ passport.serializeUser((user, done) => {
 //passport adds the user info to req.user and we can use that to verify the authenticated user
 passport.deserializeUser((id, done) => {
   //look for user by their id, reutrn a user object containing only their email
-  User.findById(id, 'email', (err, user) => {
+  User.findById(id, 'username', (err, user) => {
     if (err) return done(err, null)
     done(null, user)
   })
