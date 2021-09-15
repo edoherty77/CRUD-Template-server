@@ -27,7 +27,8 @@ app.use(
     }),
   )
 
-  app.use('api/v1', routes.chatrooms)
+  app.use('/api/v1', routes.chatrooms)
+  app.use('/api/v1/auth', routes.auth)
 
 //connection
 app.listen(process.env.PORT, () =>

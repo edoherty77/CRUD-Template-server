@@ -1,3 +1,4 @@
 module.exports = {
-  chatrooms: require('./chatrooms')
+  chatrooms: require('./chatrooms'),
+  auth: require('./auth')
 }
