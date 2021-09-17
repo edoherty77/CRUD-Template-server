@@ -8,7 +8,7 @@ const index = async (req, res) => {
 const show = async (req, res) => {
   const roomId = req.params.id
   try {
-    const foundChatroom = await db.Chatroom.findOne({id: roomId}).populate('messages')
+    const foundChatroom = await db.Chatroom.findById(roomId).populate('messages')
     return res.json(foundChatroom)
   } catch(err) {
     console.log(err)
