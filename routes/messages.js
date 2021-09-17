@@ -4,6 +4,8 @@ const ctrl = require('../controllers')
 // routes
 router.get('/', ctrl.messages.index)
 router.post('/', ctrl.messages.create)
+router.put('/:id', ctrl.messages.update)
+router.delete('/:id', ctrl.messages.destroy)
 
 // exports
 module.exports = router

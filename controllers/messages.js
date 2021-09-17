@@ -20,7 +20,21 @@ const create = async (req, res) => {
   }
 }
 
+const update = async (req, res) => {
+  try {
+    const updatedMessage = await db.Message.findByIdAndUpdate(req.params.id, {message: req.body.newMessage}, {new: true})
+  } catch(err) {
+    console.log(err)
+  }
+}
+
+const destroy = async (req, res) => {
+  console.log(req.params.id)
+}
+
 module.exports = {
   index,
-  create
+  create,
+  update,
+  destroy
 }
